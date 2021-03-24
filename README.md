@@ -29,6 +29,7 @@ free meaningful description
 -	  на виході отримуємо модель даних **Cafe**, яку ми змінили (аналогічно Get{id})
 -	  Якщо в id буде передаватись не integer(чи в тілі запиту не модель даних **Cafe**), або число буде більшим за кількість id в цьому закладі, повертатиметься помилка 400 Bad Request і 404 Not found відповідно
 >   Як менеджер я хочу створювати та видаляти заклади з системи 
+
 -	  Post – створює новий заклад
 -	  на вході у тілі запиту має передаватись модель даних **Cafe** без id 
 -	  на виході отримуємо модель даних **Cafe**, яку ми створили (аналогічно Get{id})
@@ -39,11 +40,11 @@ free meaningful description
 -	  Якщо в id буде передаватись не integer, або число буде більшим за кількість id в цьому закладі, повертатиметься помилка 400 Bad Request і 404 Not found відповідно
 
 ###### Приклад запитів:
-POST   /api/v1/cafe
-PUT   /api/v1/cafe/{id}
-GET   /api/v1/cafe
-GET   /api/v1/cafe/{id}
-DELETE   /api/v1/cafe/{id}
+-POST   /api/v1/cafe
+-PUT   /api/v1/cafe/{id}
+-GET   /api/v1/cafe
+-GET   /api/v1/cafe/{id}
+-DELETE   /api/v1/cafe/{id}
 
 ### Ресурс: позиції меню
 
@@ -80,8 +81,8 @@ DELETE   /api/v1/cafe/{id}
 -   Якщо в id буде передаватись не integer, або число буде більшим за кількість id в цьому закладі, повертатиметься помилка 400 Bad Request і 404 Not found відповідно
 
 ###### Приклад запитів:
-POST   /api/v1/cafe/{cafeId}/pizzas
-PUT   /api/v1/cafe/{cafeId}/pizzas/{id}
-GET   /api/v1/cafe/{cafeId}/pizzas
-GET   /api/v1/cafe/{cafeId}/pizzas/{id}
-DELETE   /api/v1/cafe/{cafeId}/pizzas/{id}
+-POST   /api/v1/cafe/{cafeId}/pizzas
+-PUT   /api/v1/cafe/{cafeId}/pizzas/{id}
+-GET   /api/v1/cafe/{cafeId}/pizzas
+-GET   /api/v1/cafe/{cafeId}/pizzas/{id}
+-DELETE   /api/v1/cafe/{cafeId}/pizzas/{id}
