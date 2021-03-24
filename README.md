@@ -40,11 +40,11 @@ free meaningful description
 -	  Якщо в id буде передаватись не integer, або число буде більшим за кількість id в цьому закладі, повертатиметься помилка 400 Bad Request і 404 Not found відповідно
 
 ###### Приклад запитів:
--POST   /api/v1/cafe
--PUT   /api/v1/cafe/{id}
--GET   /api/v1/cafe
--GET   /api/v1/cafe/{id}
--DELETE   /api/v1/cafe/{id}
+-  POST   /api/v1/cafe
+-  PUT   /api/v1/cafe/{id}
+-  GET   /api/v1/cafe
+-  GET   /api/v1/cafe/{id}
+-  DELETE   /api/v1/cafe/{id}
 
 ### Ресурс: позиції меню
 
