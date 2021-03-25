@@ -103,8 +103,8 @@ free meaningful description
 
 ###### Приклад запитів:
 
--  POST/api/v1/cafe/{cafeId}/pizzas
--  PUT/api/v1/cafe/{cafeId}/pizzas/{id}
--  GET/api/v1/cafe/{cafeId}/pizzas
--  GET/api/v1/cafe/{cafeId}/pizzas/{id}
--  DELETE/api/v1/cafe/{cafeId}/pizzas/{id}
+-  POST/api/v1/cafes/{cafeId}/pizzas
+-  PUT/api/v1/cafes/{cafeId}/pizzas/{id}
+-  GET/api/v1/cafes/{cafeId}/pizzas
+-  GET/api/v1/cafes/{cafeId}/pizzas/{id}
+-  DELETE/api/v1/cafes/{cafeId}/pizzas/{id}
