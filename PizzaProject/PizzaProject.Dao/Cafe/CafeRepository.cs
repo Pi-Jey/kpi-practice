@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PizzaProject.Dao;
 using PizzaProject.Model.Cafe;
+using PizzaProject.Model.Exception;
 
 namespace PizzaProject.Dao.Cafe
 {
@@ -23,20 +21,24 @@ namespace PizzaProject.Dao.Cafe
         public async Task<Model.Cafe.Cafe> AddAsync(Model.Cafe.Cafe cafe)
         {
             var entity = _mapper.Map<CafeDto>(cafe);
-            var result = await _context.AddAsync(entity);
+            var result = await _context.Cafes.AddAsync(entity);
             return _mapper.Map<Model.Cafe.Cafe>(result.Entity);
         }
 
         public async Task RemoveAsync(int id)
         {
             var entity = await _context.Cafes.FirstOrDefaultAsync(c => c.Id == id);
+            if (entity == null)
+            {
+                throw new ValidationException(message: $"Cafe not found, cafeid = {id}");
+            }
             _context.Cafes.Remove(entity);
         }
 
         public async Task<Model.Cafe.Cafe> UpdateNameAsync(Model.Cafe.Cafe cafe)
         {
             var entity = _mapper.Map<CafeDto>(cafe);
-            var result = _context.Update(entity);
+            var result = _context.Cafes.Update(entity);
             return _mapper.Map<Model.Cafe.Cafe>(result.Entity);
         }
 
@@ -49,6 +51,10 @@ namespace PizzaProject.Dao.Cafe
         public async Task<Model.Cafe.Cafe> GetByIdAsync(int id)
         {
             var entity = await _context.Cafes.FirstOrDefaultAsync(c => c.Id == id);
+            if (entity == null)
+            {
+                throw new ValidationException(message: $"Cafe not found, cafeid = {id}");
+            }
             return _mapper.Map<Model.Cafe.Cafe>(entity);
         }
     }

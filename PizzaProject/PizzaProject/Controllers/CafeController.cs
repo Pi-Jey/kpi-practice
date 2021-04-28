@@ -1,19 +1,14 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using PizzaProject.Model.Cafe;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace PizzaProject.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CafeController : ControllerBase
+    public class CafeController : Controller
     {
         private readonly IMapper _mapper;
         private readonly ICafeService _cafeService;
@@ -44,7 +39,6 @@ namespace PizzaProject.Controllers
             var cafe = _mapper.Map<PizzaProject.Model.Cafe.Cafe>(cafeshka);
             var createdCafe = await _cafeService.AddAsync(cafe);
             return Ok(_mapper.Map<Cafe.Contract.Cafe>(createdCafe));
-
         }
         [HttpPatch("{id}")]
         public async Task<IActionResult> PatchAsync(int id, string name)
@@ -57,7 +51,6 @@ namespace PizzaProject.Controllers
         {
             await _cafeService.RemoveAsync(id);
             return Ok();
-
         }
     }
 }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PizzaProject.Model.Cafe
 {
@@ -8,7 +6,7 @@ namespace PizzaProject.Model.Cafe
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public TimeSpan OpenTime { get; set; }
-        public TimeSpan CloseTime { get; set; }
+        public string OpenTime { get; set; }
+        public string CloseTime { get; set; }
     }
 }

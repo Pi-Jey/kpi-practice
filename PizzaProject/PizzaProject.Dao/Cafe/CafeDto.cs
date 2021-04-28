@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace PizzaProject.Dao.Cafe
 {
@@ -17,10 +15,10 @@ namespace PizzaProject.Dao.Cafe
         public string Name { get; set; }
 
         [Column(name: "WhenOpen")]
-        public TimeSpan OpenTime { get; set; }
+        public string OpenTime { get; set; }
 
         [Column(name: "WhenClose")]
-        public TimeSpan CloseTime { get; set; }
+        public string CloseTime { get; set; }
 
     }
 }
