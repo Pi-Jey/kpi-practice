@@ -48,7 +48,7 @@ namespace PizzaProject.Orchestrators.Cafe
             if (cafe == null)
                 throw new ValidationException(message: $"Cafe not found, cafeid = {id}");
 
-            if (name == "")
+            if (string.IsNullOrWhiteSpace(name))
                 throw new ValidationException(message: "invalid name");
 
             cafe.Name = name;
