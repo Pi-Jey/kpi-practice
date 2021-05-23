@@ -49,7 +49,7 @@ namespace PizzaProject.Orchestrators.Pizza
             if (pizza == null)
                 throw new ArgumentOutOfRangeException();
 
-            if (name == "")
+            if (string.IsNullOrEmpty(name))
                 throw new ArgumentOutOfRangeException();
 
             pizza.Name = name;
