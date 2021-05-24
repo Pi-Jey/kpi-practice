@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaProject.Onion", "PizzaProject.Onion.csproj", "{55906A9A-5CA8-4FDE-B10A-E2CC4C7A6610}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaProject.Onion", "PizzaProject.Onion.csproj", "{55906A9A-5CA8-4FDE-B10A-E2CC4C7A6610}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaProject.Core", "..\PizzaProject.Core\PizzaProject.Core.csproj", "{7E1C6532-A086-46D0-85B5-65A15E90684C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaProject.Core", "..\PizzaProject.Core\PizzaProject.Core.csproj", "{7E1C6532-A086-46D0-85B5-65A15E90684C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaProject.Data", "..\PizzaProject.Data\PizzaProject.Data.csproj", "{D2FD07EF-D85A-41F0-AA48-266B42248902}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaProject.Data", "..\PizzaProject.Data\PizzaProject.Data.csproj", "{D2FD07EF-D85A-41F0-AA48-266B42248902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaProject.Orchestrators", "..\PizzaProject.Orchestrators\PizzaProject.Orchestrators.csproj", "{0AC92B3B-B9F9-49E2-887F-75454328917F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaProject.Orchestrators", "..\PizzaProject.Orchestrators\PizzaProject.Orchestrators.csproj", "{0AC92B3B-B9F9-49E2-887F-75454328917F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaProject.Test", "..\PizzaProject.Test\PizzaProject.Test.csproj", "{B1689FF7-798C-4604-9EA2-5B831AE98109}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0AC92B3B-B9F9-49E2-887F-75454328917F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AC92B3B-B9F9-49E2-887F-75454328917F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AC92B3B-B9F9-49E2-887F-75454328917F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1689FF7-798C-4604-9EA2-5B831AE98109}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1689FF7-798C-4604-9EA2-5B831AE98109}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1689FF7-798C-4604-9EA2-5B831AE98109}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1689FF7-798C-4604-9EA2-5B831AE98109}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
