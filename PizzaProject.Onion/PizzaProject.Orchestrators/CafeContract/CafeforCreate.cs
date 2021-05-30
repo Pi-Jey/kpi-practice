@@ -1,14 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PizzaProject.Onion.CafeContract
+namespace PizzaProject.Orchestrators.CafeContract
 {
-    public class Cafe
-    { 
-        public int Id { get; set; }
+    public class CafeforCreate
+    {
+        [Required]
+        [Range(3,30)]
         public string Name { get; set; }
+        [Required]
         public string OpenTime { get; set; }
+        [Required]
         public string CloseTime { get; set; }
-
     }
 }

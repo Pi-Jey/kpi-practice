@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace PizzaProject.Onion.PizzaContract
+namespace PizzaProject.Orchestrators.PizzaContract
 {
     public class PizzaProfile : Profile
     {
@@ -11,7 +11,6 @@ namespace PizzaProject.Onion.PizzaContract
               .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
               .ForMember(dest => dest.Size, opt => opt.MapFrom(src => src.Size))
               .ForMember(dest => dest.Recipe, opt => opt.MapFrom(src => src.Recipe));
-
         }
     }
 }
