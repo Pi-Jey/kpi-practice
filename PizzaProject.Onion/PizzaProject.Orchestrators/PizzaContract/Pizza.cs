@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace PizzaProject.Onion.PizzaContract
+﻿namespace PizzaProject.Orchestrators.PizzaContract
 {
     public class Pizza
     {
@@ -9,7 +6,5 @@ namespace PizzaProject.Onion.PizzaContract
         public string Name { get; set; }
         public int Size { get; set; }
         public string Recipe { get; set; }
-
-
     }
 }

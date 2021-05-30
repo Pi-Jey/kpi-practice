@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using PizzaProject.Core.Pizza;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using PizzaProject.Orchestrators;
 
 namespace PizzaProject.Onion.Controllers
 {
@@ -25,27 +26,31 @@ namespace PizzaProject.Onion.Controllers
         public async Task<IActionResult> GetAsync()
         {
             var pizzas = await _pizzaService.GetAsync();
-            return Ok(_mapper.Map<List<PizzaContract.Pizza>>(pizzas));
+            var result = _mapper.Map<List<Orchestrators.PizzaContract.Pizza>>(pizzas);
+            return Ok(result);
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var cafe = await _pizzaService.GetByIdAsync(id);
-            return Ok(_mapper.Map<List<PizzaContract.Pizza>>(cafe));
+            var pizza = await _pizzaService.GetByIdAsync(id);
+            var result = _mapper.Map<Orchestrators.PizzaContract.Pizza>(pizza);
+            return Ok(result);
         }
         [HttpPost]
-        public async Task<IActionResult> PostAsync(PizzaContract.Pizza _pizza)
+        public async Task<IActionResult> PostAsync(Orchestrators.PizzaContract.PizzaforCreate pizzaforcreate)
         {
-            var pizza = _mapper.Map<PizzaProject.Core.Pizza.Pizza>(_pizza);
-            var createdPizza = await _pizzaService.AddAsync(pizza) ;
-            return Ok(_mapper.Map<PizzaContract.Pizza>(createdPizza));
+            var pizza = _mapper.Map<PizzaProject.Core.Pizza.Pizza>(pizzaforcreate);
+            var createdPizza = await _pizzaService.AddAsync(pizza);
+            var result = _mapper.Map<Orchestrators.PizzaContract.Pizza>(createdPizza);
+            return Ok(result);
 
         }
         [HttpPatch("{id}")]
         public async Task<IActionResult> PatchAsync(int id, string name)
         {
-            var cafe = await _pizzaService.UpdateNameAsync(id, name);
-            return Ok(_mapper.Map<PizzaContract.Pizza>(cafe));
+            var pizza = await _pizzaService.UpdateNameAsync(id, name);
+            var result = _mapper.Map<Orchestrators.PizzaContract.Pizza>(pizza);
+            return Ok(result);
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)

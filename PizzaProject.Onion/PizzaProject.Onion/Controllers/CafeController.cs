@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using PizzaProject.Core.Cafe;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using PizzaProject.Orchestrators;
 
 namespace PizzaProject.Onion.Controllers
 {
@@ -25,27 +26,31 @@ namespace PizzaProject.Onion.Controllers
         public async Task<IActionResult> GetAsync()
         {
             var cafes = await _cafeService.GetAsync();
-            return Ok(_mapper.Map<List<CafeContract.Cafe>>(cafes));
+            var result = _mapper.Map<List<Orchestrators.CafeContract.Cafe>>(cafes);
+            return Ok(result);
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var cafe = await _cafeService.GetByIdAsync(id);
-            return Ok(_mapper.Map<List<CafeContract.Cafe>>(cafe));
+            var result = _mapper.Map<Orchestrators.CafeContract.Cafe>(cafe);
+            return Ok(result);
         }
         [HttpPost]
-        public async Task<IActionResult> PostAsync(CafeContract.Cafe _cafe)
+        public async Task<IActionResult> PostAsync(Orchestrators.CafeContract.CafeforCreate cafeforcreate)
         {
-            var cafe = _mapper.Map<PizzaProject.Core.Cafe.Cafe>(_cafe);
+            var cafe = _mapper.Map<PizzaProject.Core.Cafe.Cafe>(cafeforcreate);
             var createdCafe = await _cafeService.AddAsync(cafe);
-            return Ok(_mapper.Map<CafeContract.Cafe>(createdCafe));
+            var result = _mapper.Map<Orchestrators.CafeContract.Cafe>(createdCafe);
+            return Ok(result);
 
         }
         [HttpPatch("{id}")]
         public async Task<IActionResult> PatchAsync(int id, string name)
         {
             var cafe = await _cafeService.UpdateNameAsync(id, name);
-            return Ok(_mapper.Map<CafeContract.Cafe>(cafe));
+            var result = _mapper.Map<Orchestrators.CafeContract.Cafe>(cafe);
+            return Ok(result);
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
